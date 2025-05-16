@@ -1,2 +1,7 @@
-
+body {
+  color: gold;
+  background: linear-gradient(to right, #00008b, #191970, #000);
+  font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
+  font-weight: bold;
+}
 /*# sourceMappingURL=Frontend.fddafef7.css.map */

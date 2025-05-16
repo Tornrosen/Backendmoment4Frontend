@@ -1,0 +1,6 @@
+body {
+    background: linear-gradient(to right, darkblue, midnightblue, black);
+    color: gold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}

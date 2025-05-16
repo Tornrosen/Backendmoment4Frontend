@@ -1,1 +1,1 @@
-{"mappings":"","sources":[],"sourcesContent":[],"names":[],"version":3,"file":"Frontend.fddafef7.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAAA","sources":["src/css/stilmall.css"],"sourcesContent":["body {\r\n    background: linear-gradient(to right, darkblue, midnightblue, black);\r\n    color: gold;\r\n    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\r\n    font-weight: bold;\r\n}"],"names":[],"version":3,"file":"Frontend.fddafef7.css.map","sourceRoot":"/__parcel_source_root/"}
