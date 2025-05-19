@@ -1,6 +1,55 @@
 body {
-    background: linear-gradient(to right, darkblue, midnightblue, black);
-    color: gold;
+    background: linear-gradient(to right, powderblue, skyblue, steelblue);
+    color: darkslateblue;
+    overflow-x: hidden;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background: linear-gradient(to right, darkblue, midnightblue, black);
+    color: goldenrod;
+    padding: 1%;
+    border-bottom: solid 2px goldenrod;
+}
+
+#headMenu {
+    list-style-type: none;
+    width: 500px;
+
+    li {
+        display: inline-block;
+
+        a {
+            color: darkgoldenrod;
+            text-decoration: none;
+            padding: 5px 5px;
+        }
+    }
+}
+
+.here {
+    border: 2px double gold;
+    border-radius: 2px;
+}
+
+h2, p {
+    padding: 1%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #headMenu li {
+        display: block;
+        padding: 2%;
+        text-align: center;
+    }
 }

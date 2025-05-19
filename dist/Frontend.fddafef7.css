@@ -1,7 +1,57 @@
 body {
-  color: gold;
-  background: linear-gradient(to right, #00008b, #191970, #000);
+  color: #483d8b;
+  background: linear-gradient(to right, #b0e0e6, #87ceeb, #4682b4);
+  margin: 0 auto;
   font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
   font-weight: bold;
+  overflow-x: hidden;
+}
+
+header {
+  color: #daa520;
+  background: linear-gradient(to right, #00008b, #191970, #000);
+  border-bottom: 2px solid #daa520;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  display: flex;
+}
+
+#headMenu {
+  width: 500px;
+  list-style-type: none;
+
+  & li {
+    display: inline-block;
+
+    & a {
+      color: #b8860b;
+      padding: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+.here {
+  border: 2px double gold;
+  border-radius: 2px;
+}
+
+h2, p {
+  text-align: center;
+  padding: 1%;
+}
+
+@media screen and (width <= 1024px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #headMenu li {
+    text-align: center;
+    padding: 2%;
+    display: block;
+  }
 }
 /*# sourceMappingURL=Frontend.fddafef7.css.map */
