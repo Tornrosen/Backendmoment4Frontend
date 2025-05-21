@@ -49,7 +49,7 @@ form.form {
     display: table;
 }
 
-#registerForm, #loginDiv, #messageForm {
+#registerDiv, #messageForm, #loginDiv {
     display: flex;
     justify-content: center;
 }

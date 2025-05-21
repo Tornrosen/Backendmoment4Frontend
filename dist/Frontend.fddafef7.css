@@ -50,7 +50,7 @@ form.form {
   display: table;
 }
 
-#registerForm, #loginDiv, #messageForm {
+#registerDiv, #messageForm, #loginDiv {
   justify-content: center;
   display: flex;
 }
