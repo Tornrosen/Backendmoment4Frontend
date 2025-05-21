@@ -2,7 +2,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Frontend.fddafef7.css">
-    <script src="/add.21293b37.js" type="module"></script>
     <title>Anslagstavlan</title>
 </head>
 <body>
@@ -10,19 +9,21 @@
   <nav>
                 <ul id="headMenu">
                     <li><a href="/index.html">Meddelanden</a></li>
-                    <li><a href="/register.html">Skapa konto</a></li>
+                    <li><a href="/register.html" class="here">Skapa konto</a></li>
                     <li><a href="/login.html">Logga in</a></li>
                 </ul>
             </nav></header>
-            <h2>Lägg till meddelande</h2>
-  <div id="messageForm">
+            <h2>Skapa konto</h2>
+         <div id="registerForm">
             <form id="form">
                 <div class="form"><label for="username">Användarnamn: </label><input type="text" id="username"></div>
-                <div class="form"><label for="message">Meddelande: </label><input type="text" id="email"></div>
-                <div class="form"><input type="submit" id="submitBtn" value="Posta meddelande!"></div>
+                <div class="form"><label for="email">Mailadress: </label><input type="text" id="email"></div>
+                <div class="form"><label for="password">Lösenord: </label><input type="password" id="password"></div>
+                <div class="form"><input type="submit" id="submitBtn" value="Skapa konto!"></div>
                 <span id="errorSpace"></span>
             </form>
-        </div>             
+        </div>   
+           
   <script src="/Frontend.b828852a.js" type="module"></script>  
 
 </body></html>

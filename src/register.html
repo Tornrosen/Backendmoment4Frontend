@@ -11,19 +11,21 @@
   <nav>
                 <ul id="headMenu">
                     <li><a href="index.html">Meddelanden</a></li>
-                    <li><a href="register.html">Skapa konto</a></li>
-                    <li><a href="login.html" class="here">Logga in</a></li>
+                    <li><a href="register.html" class="here">Skapa konto</a></li>
+                    <li><a href="login.html">Logga in</a></li>
                 </ul>
             </nav></header>
-            <h2>Logga in</h2>
-            <div id="loginDiv">
-            <form id="loginForm">
+            <h2>Skapa konto</h2>
+         <div id="registerForm">
+            <form id="form">
                 <div class="form"><label for="username">Användarnamn: </label><input type="text" id="username"></div>
+                <div class="form"><label for="email">Mailadress: </label><input type="text" id="email"></div>
                 <div class="form"><label for="password">Lösenord: </label><input type="password" id="password"></div>
-                <div class="form"><input type="submit" id="submitBtn" value="Logga in!"></div>
+                <div class="form"><input type="submit" id="submitBtn" value="Skapa konto!"></div>
                 <span id="errorSpace"></span>
             </form>
         </div>   
+           
   <script src="js/main.js" type="module"></script>  
 </body>
 </html>

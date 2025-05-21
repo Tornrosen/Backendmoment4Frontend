@@ -160,7 +160,7 @@
       });
     }
   }
-})({"93v64":[function(require,module,exports,__globalThis) {
+})({"iI9cv":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -168,7 +168,7 @@ var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "f3e508fdb828852a";
+module.bundle.HMR_BUNDLE_ID = "0d4551ad21293b37";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -666,83 +666,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"lhpGb":[function(require,module,exports,__globalThis) {
+},{}],"h654a":[function(require,module,exports,__globalThis) {
 "use strict";
-//Skapa variabler
-const messageSpace = document.getElementById("messageSpace");
-const headMenu = document.getElementById("headMenu");
-const registerForm = document.getElementById("registerForm");
-const loginForm = document.getElementById("loginForm");
-const messageForm = document.getElementById("messageForm");
-const errorSpace = document.getElementById("errorSpace");
-window.onload = init;
-function init() {
-    changeMenu();
-    if (messageSpace) getMessages();
-    if (loginForm) loginForm.addEventListener("submit", loginUser);
-}
-//hämta meddelanden 
-async function getMessages() {
-    try {
-        const response = await fetch("http://127.0.0.1:3000/api/messages");
-        if (response.ok) {
-            const data = await response.json();
-            writeMessages(data);
-        }
-    } catch  {
-        console.log("Fel vid datah\xe4mtning.");
-    }
-}
-//skriva ut meddelanden
-async function writeMessages(data) {
-    messageSpace.innerHTML = "";
-    data.forEach((message)=>{
-        const article = document.createElement("article");
-        article.innerHTML += `<h3>${message.title}</h3><p id="msgPoster">${message.username}</p><p>${message.message}.</p>`;
-        messageSpace.appendChild(article);
-    });
-}
-//dynamisk meny
-function changeMenu() {
-    //localStorage.setItem("user_token", "jdoehf");
-    if (localStorage.getItem("user_token")) headMenu.innerHTML = `
-        <li><a href="index.html">Meddelanden</a></li>
-                    <li><a href="add.html">L\xe4gg till meddelande</a></li>
-                    <li><button id="logoutbtn" class="logoutbtn">Logga ut</button></li>`;
-    else headMenu.innerHTML = `<li><a href="index.html">Meddelanden</a></li>
-                    <li><a href="register.html">Skapa konto</a></li>
-                    <li><a href="login.html">Logga in</a></li>`;
-    const logoutBtn = document.getElementById("logoutbtn");
-    if (logoutBtn) logoutBtn.addEventListener("click", ()=>{
-        localStorage.removeItem("user_token");
-        window.location.href = "login.html";
-    });
-}
-async function loginUser(e) {
-    e.preventDefault();
-    let usernameValue = document.getElementById("username").value;
-    let passwordValue = document.getElementById("password").value;
-    if (!usernameValue || !passwordValue) {
-        errorSpace.innerHTML = "Fyll i anv\xe4ndarnamn och l\xf6senord!";
-        return;
-    } else errorSpace.innerHTML = "";
-    let user = {
-        username: usernameValue,
-        password: passwordValue
-    };
-    try {
-        const response = await fetch("http://127.0.0.1:3000/api/login", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(user)
-        });
-    } catch  {
-        console.log("Felaktigt anv\xe4ndarnamn eller l\xf6senord.");
-    }
-}
+if (!localStorage.getItem("user_token")) window.location.href = "login.html";
 
-},{}]},["93v64","lhpGb"], "lhpGb", "parcelRequire3fa9", {})
+},{}]},["iI9cv","h654a"], "h654a", "parcelRequire3fa9", {})
 
-//# sourceMappingURL=Frontend.b828852a.js.map
+//# sourceMappingURL=add.21293b37.js.map

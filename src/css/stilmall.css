@@ -32,14 +32,47 @@ header {
     }
 }
 
-.here {
-    border: 2px double gold;
-    border-radius: 2px;
+#logoutbtn {
+    background: rgba(0, 0, 0, 0);
+    border:none;
+    font-weight: bold;
+    color: darkgoldenrod;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
 }
-
 h2, p {
     padding: 1%;
     text-align: center;
+}
+
+form.form {
+    display: table;
+}
+
+#registerForm, #loginDiv, #messageForm {
+    display: flex;
+    justify-content: center;
+}
+
+div.form {
+    display: table-row;
+}
+
+label,
+input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+
+label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#msgPoster {
+    font-weight: bold;
+    color: black;
 }
 
 @media screen and (max-width: 1024px) {

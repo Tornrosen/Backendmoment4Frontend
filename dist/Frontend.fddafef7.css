@@ -32,14 +32,46 @@ header {
   }
 }
 
-.here {
-  border: 2px double gold;
-  border-radius: 2px;
+#logoutbtn {
+  color: #b8860b;
+  background: none;
+  border: none;
+  font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 h2, p {
   text-align: center;
   padding: 1%;
+}
+
+form.form {
+  display: table;
+}
+
+#registerForm, #loginDiv, #messageForm {
+  justify-content: center;
+  display: flex;
+}
+
+div.form {
+  display: table-row;
+}
+
+label, input {
+  margin-bottom: 10px;
+  display: table-cell;
+}
+
+label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#msgPoster {
+  color: #000;
+  font-weight: bold;
 }
 
 @media screen and (width <= 1024px) {
