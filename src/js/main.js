@@ -5,7 +5,7 @@ const messageSpace = document.getElementById("messageSpace");
 const headMenu = document.getElementById("headMenu");
 const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
-let messageForm = document.getElementById("messageForm");
+const messageForm = document.getElementById("messageForm");
 const errorSpace = document.getElementById("errorSpace");
 
 window.onload = init;
@@ -151,7 +151,7 @@ const response = await fetch("http://127.0.0.1:3000/messages", {
 if(response.ok) {
     const data = await response.json();
     let msgSpace = document.getElementById("msgSpace");
-    msgSpace.innerHTML =`Meddelande från användare titeln ${data.username} har blivit tillagt!`;
+    msgSpace.innerHTML =`Meddelande från användare ${data.username} har blivit tillagt!`;
 } else {
     msgSpace.innerHTML="";
     throw error;

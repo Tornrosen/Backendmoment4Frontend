@@ -673,7 +673,7 @@ const messageSpace = document.getElementById("messageSpace");
 const headMenu = document.getElementById("headMenu");
 const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
-let messageForm = document.getElementById("messageForm");
+const messageForm = document.getElementById("messageForm");
 const errorSpace = document.getElementById("errorSpace");
 window.onload = init;
 function init() {
@@ -774,7 +774,7 @@ async function submitMessage(e) {
         if (response.ok) {
             const data = await response.json();
             let msgSpace1 = document.getElementById("msgSpace");
-            msgSpace1.innerHTML = `Meddelande fr\xe5n anv\xe4ndare titeln ${data.username} har blivit tillagt!`;
+            msgSpace1.innerHTML = `Meddelande fr\xe5n anv\xe4ndare ${data.username} har blivit tillagt!`;
         } else {
             msgSpace.innerHTML = "";
             throw error;
