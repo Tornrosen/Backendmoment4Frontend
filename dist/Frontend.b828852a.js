@@ -679,6 +679,7 @@ window.onload = init;
 function init() {
     changeMenu();
     if (messageSpace) getMessages();
+    if (registerForm) registerForm.addEventListener("submit", registerUser);
     if (loginForm) loginForm.addEventListener("submit", loginUser);
     if (messageForm) messageForm.addEventListener("submit", submitMessage);
 }
@@ -718,6 +719,38 @@ function changeMenu() {
         window.location.href = "login.html";
     });
 }
+//registrera användare 
+async function registerUser(e) {
+    e.preventDefault();
+    let usernameValue = document.getElementById("username").value;
+    let emailValue = document.getElementById("email").value;
+    let passwordValue = document.getElementById("password").value;
+    if (!usernameValue || !passwordValue || !emailValue) {
+        errorSpace.innerHTML = "Fyll i anv\xe4ndarnamn, mailadress och l\xf6senord!";
+        return;
+    } else errorSpace.innerHTML = "";
+    let user = {
+        username: usernameValue,
+        email: emailValue,
+        password: passwordValue
+    };
+    try {
+        const response = await fetch("http://127.0.0.1:3000/register", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        });
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem("user_token", data.token);
+            window.location.href = "login.html";
+        } else throw error;
+    } catch  {
+        console.log("Kunde inte skapa anv\xe4ndare.");
+    }
+}
 //logga in användare
 async function loginUser(e) {
     e.preventDefault();
@@ -752,7 +785,7 @@ async function loginUser(e) {
 async function submitMessage(e) {
     e.preventDefault();
     let usernameValue = document.getElementById("username").value;
-    let messageValue = document.getElementById("message").value;
+    let messageValue = document.getElementById("email").value;
     if (!usernameValue || !messageValue) {
         errorSpace.innerHTML = "Fyll i anv\xe4ndarnamn och meddelande!";
         return;

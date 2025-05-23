@@ -17,6 +17,10 @@ function init() {
         getMessages();
     }
 
+    if(registerForm) {
+        registerForm.addEventListener("submit", registerUser)
+    }
+
     if(loginForm) {
         loginForm.addEventListener("submit", loginUser)
     }
@@ -77,6 +81,48 @@ function changeMenu() {
     }
 }
 
+//registrera användare 
+async function registerUser(e) {
+    e.preventDefault();
+
+    let usernameValue = document.getElementById("username").value;
+    let emailValue = document.getElementById("email").value;
+    let passwordValue = document.getElementById("password").value;
+
+    if(!usernameValue||!passwordValue||!emailValue) {
+    errorSpace.innerHTML ="Fyll i användarnamn, mailadress och lösenord!";
+    return;
+} else {
+    errorSpace.innerHTML ="";
+}
+
+let user = {
+    username: usernameValue,
+    email: emailValue,
+    password: passwordValue
+}
+
+try {
+const response = await fetch("http://127.0.0.1:3000/register", {
+    method: "POST",
+    headers: {
+        "content-type": "application/json"
+    },
+    body: JSON.stringify(user)
+})
+if(response.ok) {
+    const data = await response.json();
+    localStorage.setItem("user_token", data.token);
+    window.location.href="login.html";
+} else {
+    throw error;
+}
+} catch {
+    console.log("Kunde inte skapa användare.")
+}
+
+}
+
 //logga in användare
 async function loginUser (e) {
 e.preventDefault();
@@ -123,7 +169,7 @@ async function submitMessage(e) {
     e.preventDefault();
 
 let usernameValue = document.getElementById("username").value;
-let messageValue = document.getElementById("message").value;
+let messageValue = document.getElementById("email").value;
 
 if(!usernameValue||!messageValue) {
     errorSpace.innerHTML ="Fyll i användarnamn och meddelande!";
