@@ -800,7 +800,7 @@ async function submitMessage(e) {
     };
     const token = localStorage.getItem("user_token");
     try {
-        const response = await fetch("http://127.0.0.1:3000/messages", {
+        const resp = await fetch("http://127.0.0.1:3000/messages", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -808,16 +808,17 @@ async function submitMessage(e) {
             },
             body: JSON.stringify(message)
         });
-        if (response.ok) {
-            const data = await response.json();
+        if (resp.ok) {
+            const data = await resp.json();
             let msgSpace1 = document.getElementById("msgSpace");
-            msgSpace1.innerHTML = `Meddelande fr\xe5n anv\xe4ndare ${data.username} har blivit tillagt!`;
+            console.log(data);
+            msgSpace1.innerHTML = `<p>Meddelande fr\xe5n anv\xe4ndare ${data.username} har blivit tillagt!</p>`;
         } else {
             msgSpace.innerHTML = "";
             throw error;
         }
-    } catch  {
-        console.log("Kunde inte l\xe4gga till meddelande.");
+    } catch (error1) {
+        console.log("Kunde inte l\xe4gga till meddelande: " + error1);
     }
 }
 

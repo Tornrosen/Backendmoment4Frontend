@@ -191,7 +191,7 @@ let message = {
 const token = localStorage.getItem("user_token");
 
 try {
-const response = await fetch("http://127.0.0.1:3000/messages", {
+const resp = await fetch("http://127.0.0.1:3000/messages", {
     method: "POST",
     headers: {
         "content-type": "application/json",
@@ -199,16 +199,17 @@ const response = await fetch("http://127.0.0.1:3000/messages", {
     },
     body: JSON.stringify(message)
 })
-if(response.ok) {
-    const data = await response.json();
+if(resp.ok) {
+    const data = await resp.json();
     let msgSpace = document.getElementById("msgSpace");
-    msgSpace.innerHTML =`Meddelande från användare ${data.username} har blivit tillagt!`;
+    console.log(data);
+    msgSpace.innerHTML =`<p>Meddelande från användare ${data.username} har blivit tillagt!</p>`;
 } else {
     msgSpace.innerHTML="";
     throw error;
 }
-} catch {
-    console.log("Kunde inte lägga till meddelande.")
+} catch (error) {
+    console.log("Kunde inte lägga till meddelande: " + error)
 }
 
 }
