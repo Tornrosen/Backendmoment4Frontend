@@ -8,6 +8,7 @@ const loginForm = document.getElementById("loginForm");
 const messageForm = document.getElementById("messageForm");
 const errorSpace = document.getElementById("errorSpace");
 
+//funktion för att köra funktion och skapa händelselyssnare när webbläsarfönstret laddar
 window.onload = init;
 
 function init() {
@@ -49,12 +50,16 @@ async function getMessages() {
 //skriva ut meddelanden
 
 async function writeMessages(data) {
+    console.log(data);
+    let newData=data.stringify;
     messageSpace.innerHTML="";
-    data.forEach(message => {
+    if(newData){newData.forEach(message => {
        const article = document.createElement("article");
             article.innerHTML += `<h3>${message.username}</h3><p>${message.message}.</p>`; 
             messageSpace.appendChild(article);
-    });
+    })} else {
+        messageSpace.innerHTML='<p id="noMessages">Inga meddelanden än!</p>'
+    };
 }
 
 //dynamisk meny
@@ -169,7 +174,7 @@ async function submitMessage(e) {
     e.preventDefault();
 
 let usernameValue = document.getElementById("username").value;
-let messageValue = document.getElementById("email").value;
+let messageValue = document.getElementById("message").value;
 
 if(!usernameValue||!messageValue) {
     errorSpace.innerHTML ="Fyll i användarnamn och meddelande!";

@@ -1,17 +1,11 @@
 {
-  
-    "name": "elec1",
-    "version": "1.0.0",
-    "keywords": [],
-    "author": "Anna Danielsson",
-    "license": "ISC",
-    "browserslist": "> 0.5%, last 2 versions, not dead",
-    "source": "src/index.html",
-    "scripts": {
-      "start": "parcel",
-      "build": "parcel build"
-    },
-  "devDependencies": {
-    "parcel": "^2.14.4"
+  "name": "my-project",
+  "source": ["src/index.html", "src/add.html", "src/login.html", "src/register.html"],
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "parcel": "^2.15.2"
   }
 }

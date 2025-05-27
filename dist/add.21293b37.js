@@ -670,6 +670,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 "use strict";
 if (!localStorage.getItem("user_token")) window.location.href = "login.html";
 
-},{}]},["iI9cv","h654a"], "h654a", "parcelRequire3fa9", {})
+},{}]},["iI9cv","h654a"], "h654a", "parcelRequire716c", {})
 
 //# sourceMappingURL=add.21293b37.js.map

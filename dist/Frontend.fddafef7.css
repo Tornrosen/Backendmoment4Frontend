@@ -50,7 +50,7 @@ form.form {
   display: table;
 }
 
-#registerDiv, #messageForm, #loginDiv {
+#registerDiv, #messageDiv, #loginDiv {
   justify-content: center;
   display: flex;
 }
@@ -67,6 +67,14 @@ label, input {
 label {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.submitBtn {
+  color: #00008b;
+  background-color: #f8f8ff;
+  margin: 7%;
+  padding: 3%;
+  font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
 }
 
 #msgPoster {

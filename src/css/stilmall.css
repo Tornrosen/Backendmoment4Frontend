@@ -49,7 +49,7 @@ form.form {
     display: table;
 }
 
-#registerDiv, #messageForm, #loginDiv {
+#registerDiv, #messageDiv, #loginDiv {
     display: flex;
     justify-content: center;
 }
@@ -68,6 +68,14 @@ input {
 label {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.submitBtn {
+    color: darkblue;
+    background-color: ghostwhite;
+    padding: 3%;
+    margin: 7%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #msgPoster {

@@ -2,27 +2,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Frontend.fddafef7.css">
-    <script src="/add.21293b37.js" type="module"></script>
+    
     <title>Anslagstavlan</title>
 </head>
 <body>
   <header><h1>Anslagstavlan</h1>
   <nav>
                 <ul id="headMenu">
-                    <li><a href="/index.html">Meddelanden</a></li>
-                    <li><a href="/register.html">Skapa konto</a></li>
-                    <li><a href="/login.html">Logga in</a></li>
                 </ul>
             </nav></header>
             <h2>Lägg till meddelande</h2>
-  <div id="messageForm">
-            <form id="form">
+            <div id="messageDiv">
+            <form id="messageForm">
                 <div class="form"><label for="username">Användarnamn: </label><input type="text" id="username"></div>
-                <div class="form"><label for="message">Meddelande: </label><input type="text" id="email"></div>
-                <div class="form"><input type="submit" id="submitBtn" value="Posta meddelande!"></div>
+                <div class="form"><label for="message">Meddelande: </label><textarea id="message" rows="2" columns="14"></textarea></div>
+                <div class="form"><input type="submit" class="submitBtn" value="Posta meddelande!"></div>
                 <span id="errorSpace"></span>
+                <span id="msgSpace"></span>
             </form>
-        </div>             
+        </div>        
+        <script src="/add.21293b37.js" type="module"></script>     
   <script src="/Frontend.b828852a.js" type="module"></script>  
 
 </body></html>

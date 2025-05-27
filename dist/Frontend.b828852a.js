@@ -675,6 +675,7 @@ const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
 const messageForm = document.getElementById("messageForm");
 const errorSpace = document.getElementById("errorSpace");
+//funktion för att köra funktion och skapa händelselyssnare när webbläsarfönstret laddar
 window.onload = init;
 function init() {
     changeMenu();
@@ -697,12 +698,15 @@ async function getMessages() {
 }
 //skriva ut meddelanden
 async function writeMessages(data) {
+    console.log(data);
+    let newData = data.stringify;
     messageSpace.innerHTML = "";
-    data.forEach((message)=>{
+    if (newData) newData.forEach((message)=>{
         const article = document.createElement("article");
         article.innerHTML += `<h3>${message.username}</h3><p>${message.message}.</p>`;
         messageSpace.appendChild(article);
     });
+    else messageSpace.innerHTML = '<p id="noMessages">Inga meddelanden \xe4n!</p>';
 }
 //dynamisk meny
 function changeMenu() {
@@ -785,7 +789,7 @@ async function loginUser(e) {
 async function submitMessage(e) {
     e.preventDefault();
     let usernameValue = document.getElementById("username").value;
-    let messageValue = document.getElementById("email").value;
+    let messageValue = document.getElementById("message").value;
     if (!usernameValue || !messageValue) {
         errorSpace.innerHTML = "Fyll i anv\xe4ndarnamn och meddelande!";
         return;
@@ -817,6 +821,6 @@ async function submitMessage(e) {
     }
 }
 
-},{}]},["93v64","lhpGb"], "lhpGb", "parcelRequire3fa9", {})
+},{}]},["93v64","lhpGb"], "lhpGb", "parcelRequire716c", {})
 
 //# sourceMappingURL=Frontend.b828852a.js.map
